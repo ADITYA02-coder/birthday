@@ -5,18 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letter for Sweety</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
+        body {
+            background: linear-gradient(135deg, #2d1b3d 0%, #5d3a7e 50%, #8b4a8f 100%);
+            font-family: Arial;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .letter-title {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 42px;
+            font-weight: bold;
+            color: #ff6b9d;
+            text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4);
+            letter-spacing: 2px;
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4); }
+            50% { text-shadow: 0 0 40px rgba(255, 107, 157, 1), 0 0 80px rgba(255, 107, 157, 0.6); }
+        }
+
         .letter-box {
-            width: 60%;
-            margin: 80px auto;
-            background: rgba(255,255,255,0.85);
-            padding: 40px;
+            width: 90%;
+            max-width: 700px;
+            margin: auto;
+            background: rgba(255,255,255,0.9);
+            padding: 30px;
             border-radius: 20px;
             color: #333;
-            font-size: 20px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.7;
             box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-            animation: fadeIn 3s;
+            animation: fadeIn 2s;
         }
 
         @keyframes fadeIn {
@@ -25,7 +52,7 @@
         }
 
         .next-btn {
-            margin-top: 30px;
+            margin-top: 25px;
             padding: 12px 20px;
             font-size: 16px;
             border: none;
@@ -39,32 +66,27 @@
             background: #ff1e4d;
         }
 
-        body {
-            background: linear-gradient(135deg, #2d1b3d 0%, #5d3a7e 50%, #8b4a8f 100%);
-            font-family: Arial;
-            min-height: 100vh;
-        }
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .letter-title {
+                font-size: 26px;
+            }
 
-        .letter-title {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 48px;
-            font-weight: bold;
-            color: #ff6b9d;
-            text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4);
-            letter-spacing: 2px;
-            animation: glowPulse 2s ease-in-out infinite;
-        }
+            .letter-box {
+                padding: 20px;
+                font-size: 16px;
+            }
 
-        @keyframes glowPulse {
-            0%, 100% { text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4); }
-            50% { text-shadow: 0 0 40px rgba(255, 107, 157, 1), 0 0 80px rgba(255, 107, 157, 0.6); }
+            .next-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1 class="letter-title">💌 A Letter Just For You 💌</h1>
+
+<h1 class="letter-title">💌 A Letter Just For You 💌</h1>
 
 <div class="letter-box">
     <h2>Dear Sweety, 🤗</h2>

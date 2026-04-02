@@ -852,3 +852,140 @@ button:active {
         font-size: 13px;
     }
 }
+/* =====================================
+   UNIVERSAL RESPONSIVE FIXES
+   ===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.center {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Letter Page Responsive */
+.letter-box {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    font-size: 18px;
+}
+
+.letter-title {
+    font-size: 32px;
+    padding: 0 10px;
+}
+
+/* Video Section Responsive */
+.video-section {
+    width: 100%;
+    height: auto;
+}
+
+.bgvideo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Gallery Responsive Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+/* =====================================
+   MOBILE RESPONSIVE
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .countdown-heading {
+        font-size: 28px;
+    }
+
+    #countdown {
+        font-size: 32px;
+        padding: 20px;
+        letter-spacing: 3px;
+    }
+
+    .cake {
+        font-size: 120px;
+    }
+
+    .next-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .music-btn {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    .birthday-message h2 {
+        font-size: 28px;
+    }
+
+    .birthday-message p {
+        font-size: 18px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    .letter-box {
+        width: 95%;
+        padding: 18px;
+        font-size: 16px;
+    }
+
+    .gallery img {
+        height: 140px;
+    }
+
+    .cake {
+        font-size: 90px;
+    }
+
+    #countdown {
+        font-size: 26px;
+    }
+
+    .birthday-message h2 {
+        font-size: 22px;
+    }
+
+    .birthday-message p {
+        font-size: 16px;
+    }
+}

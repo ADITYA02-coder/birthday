@@ -8,24 +8,30 @@
 </head>
 <body class="bg2">
 
-<div class="cake" id="cake">
-    🎂
-</div>
 <!-- Fireworks container -->
 <div id="fireworks-container"></div>
 
-<!-- Birthday message -->
-<div id="birthday-message" class="birthday-message hidden">
-    <h2>Happy Birthday Sweety! 🎉</h2>
-    <p>May Your Day Be As Sweet As This Cake! 💕</p>
-</div>
+<div class="center">
 
-<!-- Next button -->
-<button id="next-button" class="next-button hidden" onclick="goToNextPage()">Next Page 💌</button>
+    <div class="cake" id="cake">
+        🎂
+    </div>
+
+    <!-- Birthday message -->
+    <div id="birthday-message" class="birthday-message hidden">
+        <h2>Happy Birthday Sweety! 🎉</h2>
+        <p>May Your Day Be As Sweet As This Cake! 💕</p>
+    </div>
+
+    <!-- Next button -->
+    <button id="next-button" class="next-button hidden" onclick="goToNextPage()">Next Page 💌</button>
+
+</div>
 
 <audio id="bgMusic" autoplay loop muted>
     <source src="audio.mp3" type="audio/mpeg">
 </audio>
+
 <button id="musicToggle" class="music-btn" onclick="toggleAudio()">🔇 Unmute Music</button>
 
 <script src="navigate.js"></script>
