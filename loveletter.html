@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter for Sweety</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .letter-box {
+            width: 60%;
+            margin: 80px auto;
+            background: rgba(255,255,255,0.85);
+            padding: 40px;
+            border-radius: 20px;
+            color: #333;
+            font-size: 20px;
+            line-height: 1.8;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .next-btn {
+            margin-top: 30px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .next-btn:hover {
+            background: #ff1e4d;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2d1b3d 0%, #5d3a7e 50%, #8b4a8f 100%);
+            font-family: Arial;
+            min-height: 100vh;
+        }
+
+        .letter-title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff6b9d;
+            text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4);
+            letter-spacing: 2px;
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4); }
+            50% { text-shadow: 0 0 40px rgba(255, 107, 157, 1), 0 0 80px rgba(255, 107, 157, 0.6); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="letter-title">💌 A Letter Just For You 💌</h1>
+
+<div class="letter-box">
+    <h2>Dear Sweety, 🤗</h2>
+
+    <p>
+        I don’t know how to write big fancy words, but I just want to say that
+        meeting you was one of the best things that ever happened in my life. ❤️
+        In these 5 years of friendship, there were so many memories,
+        so many laughs, and so many moments that I will never forget. 💕
+    </p>
+
+    <p>
+        You are one of the most important people in my life. ❤️
+        You supported me, understood me, tolerated my stupidity,
+        and stayed even when things were not perfect. 🤗💕
+    </p>
+
+    <p>
+        Some friendships are normal, but ours is special. 💖
+        We may not talk every day, we may fight sometimes,
+        but I know one thing — our friendship will always stay. ❤️✨
+    </p>
+
+    <p>
+        On your birthday, I just want to say:
+        Stay happy, keep smiling, and never change. 💕
+        The world is better because you are in it. 🌟❤️
+    </p>
+
+    <p>
+        Thank you for being my best friend. 💕🤗❤️
+    </p>
+
+    <h3>Happy Birthday Sweety 🎂</h3>
+
+    <button class="next-btn" onclick="nextPage()">See Memories</button>
+</div>
+
+<audio id="bgMusic" autoplay loop muted>
+    <source src="audio.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-btn" onclick="toggleAudio()">🔇 Unmute Music</button>
+
+<script src="navigate.js"></script>
+<script>
+function nextPage() {
+    window.location.href = "memories.html";
+}
+</script>
+
+</body>
+</html>
