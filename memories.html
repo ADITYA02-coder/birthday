@@ -5,82 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memories with Sweety</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        body {
-            margin: 0;
-            padding: 15px;
-        }
-
-        h1.center {
-            font-size: 36px;
-            margin-bottom: 20px;
-            padding: 0 10px;
-        }
-
-        /* Video Section */
-        .video-section {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto 30px auto;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .bgvideo {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            object-fit: cover;
-        }
-
-        /* Photos Section */
-        .photos-section {
-            text-align: center;
-        }
-
-        .photos-section h2 {
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
-
-        /* Responsive Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            padding: 10px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        /* Mobile */
-        @media (max-width: 600px) {
-
-            h1.center {
-                font-size: 24px;
-            }
-
-            .photos-section h2 {
-                font-size: 20px;
-            }
-
-            .gallery img {
-                height: 130px;
-            }
-
-            .video-section {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
 </head>
-
 <body class="bg3">
 
 <h1 class="center">5 Years of Friendship ❤️</h1>
@@ -88,18 +13,16 @@
 <audio id="bgMusic" autoplay loop muted>
     <source src="audio.mp3" type="audio/mpeg">
 </audio>
-
 <button id="musicToggle" class="music-btn" onclick="toggleAudio()">🔇 Unmute Music</button>
 
 <div class="video-section">
-    <video autoplay loop muted playsinline class="bgvideo">
+    <video autoplay loop muted class="bgvideo">
         <source src="video.mp4" type="video/mp4">
     </video>
 </div>
 
 <div class="photos-section">
     <h2>Photo Memories</h2>
-
     <div class="gallery">
         <img src="photo1.jpeg" alt="Memory photo 1">
         <img src="photo2.jpeg" alt="Memory photo 2">
@@ -110,6 +33,5 @@
 </div>
 
 <script src="navigate.js"></script>
-
 </body>
 </html>
