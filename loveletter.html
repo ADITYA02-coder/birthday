@@ -1,141 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letter for Sweety</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter for Harsh 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <style>
-        body {
-            background: linear-gradient(135deg, #2d1b3d 0%, #5d3a7e 50%, #8b4a8f 100%);
-            font-family: Arial;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
+:root {
+  --gold: #F5C842;
+  --gold-dim: #c99e1e;
+  --pink: #FF6B9D;
+  --cream: #FFF8EE;
+  --dark: #1A1008;
+  --paper: #FFFDF5;
+}
 
-        .letter-title {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            font-size: 42px;
-            font-weight: bold;
-            color: #ff6b9d;
-            text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4);
-            letter-spacing: 2px;
-            animation: glowPulse 2s ease-in-out infinite;
-        }
+html { scroll-behavior: smooth; }
 
-        @keyframes glowPulse {
-            0%, 100% { text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4); }
-            50% { text-shadow: 0 0 40px rgba(255, 107, 157, 1), 0 0 80px rgba(255, 107, 157, 0.6); }
-        }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--dark);
+  color: var(--cream);
+  min-height: 100vh;
+  padding: 2rem 1rem 5rem;
+  overflow-x: hidden;
+}
 
-        .letter-box {
-            width: 90%;
-            max-width: 700px;
-            margin: auto;
-            background: rgba(255,255,255,0.9);
-            padding: 30px;
-            border-radius: 20px;
-            color: #333;
-            font-size: 18px;
-            line-height: 1.7;
-            box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-            animation: fadeIn 2s;
-        }
+/* ── BACKGROUND GRID ── */
+.grid-bg {
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(245,200,66,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,200,66,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
 
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
+/* ── FLOATING ORBS ── */
+.orb {
+  position: fixed; border-radius: 50%; z-index: 0;
+  filter: blur(80px); opacity: 0.15;
+  animation: drift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.orb1 { width: 400px; height: 400px; background: var(--gold); top: -100px; left: -100px; animation-duration: 12s; }
+.orb2 { width: 300px; height: 300px; background: var(--pink); bottom: -80px; right: -80px; animation-duration: 16s; animation-delay: -6s; }
+@keyframes drift { from { transform: translate(0,0); } to { transform: translate(40px,30px); } }
 
-        .next-btn {
-            margin-top: 25px;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: none;
-            background: #ff4d6d;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+/* ── CONTENT WRAPPER ── */
+.wrapper {
+  position: relative; z-index: 10;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+}
 
-        .next-btn:hover {
-            background: #ff1e4d;
-        }
+/* ── TOP TAG ── */
+.top-tag {
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.7;
+  margin-top: 0.5rem;
+}
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .letter-title {
-                font-size: 26px;
-            }
+/* ── TITLE ── */
+.letter-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  color: var(--gold);
+  text-align: center;
+  line-height: 1.1;
+  animation: titleGlow 2.5s ease-in-out infinite;
+}
+@keyframes titleGlow {
+  0%,100% { text-shadow: 0 0 30px rgba(245,200,66,0.4), 0 0 60px rgba(245,200,66,0.15); }
+  50%      { text-shadow: 0 0 50px rgba(245,200,66,0.7), 0 0 90px rgba(245,200,66,0.3); }
+}
 
-            .letter-box {
-                padding: 20px;
-                font-size: 16px;
-            }
+/* ── LETTER BOX ── */
+.letter-box {
+  width: 100%;
+  background: var(--paper);
+  border-radius: 24px;
+  padding: 3rem 3.5rem;
+  color: #2c1a08;
+  box-shadow:
+    0 0 0 1px rgba(245,200,66,0.3),
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 40px rgba(245,200,66,0.08);
+  animation: fadeUp 1s ease both;
+  position: relative;
+  overflow: hidden;
+}
 
-            .next-btn {
-                width: 100%;
-            }
-        }
-    </style>
+/* paper texture lines */
+.letter-box::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(245,200,66,0.12) 28px
+  );
+  background-position: 0 56px;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LETTER CONTENT ── */
+.letter-dear {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8B4513;
+  margin-bottom: 1.5rem;
+  position: relative; z-index: 1;
+}
+
+.letter-body {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: #3a2010;
+  position: relative; z-index: 1;
+}
+.letter-body p { margin-bottom: 1.3rem; }
+.letter-body p:last-child { margin-bottom: 0; }
+
+.letter-sign {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #7a3a10;
+  margin-top: 1.8rem;
+  position: relative; z-index: 1;
+}
+
+.letter-closing {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.6rem;
+  color: #c97a1e;
+  margin-top: 0.5rem;
+  position: relative; z-index: 1;
+}
+
+/* gold seal */
+.seal {
+  position: absolute;
+  bottom: 1.5rem; right: 2rem;
+  font-size: 2.8rem;
+  opacity: 0.18;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+/* ── NEXT BUTTON ── */
+.next-btn {
+  padding: 0.9rem 2.6rem;
+  background: var(--gold);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500; font-size: 1rem;
+  letter-spacing: 0.04em;
+  border: none; border-radius: 100px; cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 24px rgba(245,200,66,0.25);
+  animation: fadeUp 1s ease 0.4s both;
+}
+.next-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 44px rgba(245,200,66,0.55);
+}
+.next-btn:active { transform: scale(0.96); }
+
+/* ── MUSIC BUTTON ── */
+.music-btn {
+  position: fixed;
+  top: 20px; right: 20px;
+  padding: 0.6rem 1.3rem;
+  background: rgba(245,200,66,0.08);
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(245,200,66,0.28);
+  border-radius: 100px; cursor: pointer;
+  z-index: 1000;
+  transition: all 0.2s ease;
+}
+.music-btn:hover {
+  background: rgba(245,200,66,0.16);
+  box-shadow: 0 0 20px rgba(245,200,66,0.25);
+}
+.music-btn:active { transform: scale(0.97); }
+
+/* ── FLOATING HEARTS ── */
+.hearts {
+  position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden;
+}
+.heart {
+  position: absolute;
+  bottom: -40px;
+  font-size: 1.2rem;
+  animation: riseHeart linear infinite;
+  opacity: 0;
+}
+@keyframes riseHeart {
+  0%   { transform: translateY(0) scale(0.8); opacity: 0.6; }
+  80%  { opacity: 0.3; }
+  100% { transform: translateY(-110vh) scale(1.1); opacity: 0; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .letter-box { padding: 2rem 1.5rem; }
+  .letter-dear { font-size: 1.2rem; }
+  .letter-body { font-size: 0.97rem; }
+  .letter-closing { font-size: 1.3rem; }
+  .music-btn { top: 12px; right: 12px; font-size: 0.75rem; padding: 0.5rem 1rem; }
+
+}
+/* ───────── GLOBAL RESPONSIVE FIXES ───────── */
+
+/* Prevent overflow issues */
+body {
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.8rem, 3vw, 1.2rem) 4rem;
+}
+
+/* Make wrapper flexible */
+.wrapper {
+  width: 100%;
+  max-width: 720px;
+  padding: 0 10px;
+}
+
+/* Text auto scaling */
+.letter-title {
+  font-size: clamp(1.8rem, 6vw, 4rem);
+}
+
+.letter-body {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.8;
+}
+
+/* ───────── TABLET (≤768px) ───────── */
+@media (max-width: 768px) {
+
+  .wrapper {
+    gap: 1.5rem;
+  }
+
+  .letter-box {
+    padding: 2.2rem 1.8rem;
+    border-radius: 20px;
+  }
+
+  .letter-dear {
+    font-size: 1.3rem;
+  }
+
+  .letter-body {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .letter-closing {
+    font-size: 1.4rem;
+  }
+
+  .next-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .music-btn {
+    top: 12px;
+    right: 12px;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .seal {
+    font-size: 2.2rem;
+    right: 1.2rem;
+    bottom: 1rem;
+  }
+}
+
+/* ───────── MOBILE (≤480px) ───────── */
+@media (max-width: 480px) {
+
+  body {
+    padding: 1rem 0.6rem 3rem;
+  }
+
+  .top-tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .letter-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .letter-box {
+    padding: 1.8rem 1.2rem;
+    border-radius: 16px;
+  }
+
+  .letter-dear {
+    font-size: 1.15rem;
+  }
+
+  .letter-body {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .letter-sign {
+    font-size: 1rem;
+  }
+
+  .letter-closing {
+    font-size: 1.2rem;
+  }
+
+  .next-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .music-btn {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .seal {
+    font-size: 1.8rem;
+    right: 1rem;
+    bottom: 0.8rem;
+  }
+}
+
+/* ───────── LARGE SCREENS (≥1200px) ───────── */
+@media (min-width: 1200px) {
+
+  .wrapper {
+    max-width: 800px;
+  }
+
+  .letter-box {
+    padding: 3.5rem 4rem;
+  }
+
+  .letter-body {
+    font-size: 1.1rem;
+    line-height: 2;
+  }
+
+  .letter-title {
+    font-size: 4rem;
+  }
+}
+</style>
 </head>
-
 <body>
 
-<h1 class="letter-title">💌 A Letter Just For You 💌</h1>
+<div class="grid-bg"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="hearts" id="hearts"></div>
 
-<div class="letter-box">
-    <h2>Dear Sweety, 🤗</h2>
+<div class="wrapper">
+  <p class="top-tag">✦ something from the heart</p>
 
-    <p>
-        I don’t know how to write big fancy words, but I just want to say that
-        meeting you was one of the best things that ever happened in my life. ❤️
-        In these 5 years of friendship, there were so many memories,
-        so many laughs, and so many moments that I will never forget. 💕
-    </p>
+  <h1 class="letter-title">💌 A Letter Just For You</h1>
 
-    <p>
-        You are one of the most important people in my life. ❤️
-        You supported me, understood me, tolerated my stupidity,
-        and stayed even when things were not perfect. 🤗💕
-    </p>
+  <div class="letter-box">
+    <div class="letter-dear">Dear Harsh, 🤗</div>
 
-    <p>
-        Some friendships are normal, but ours is special. 💖
-        We may not talk every day, we may fight sometimes,
-        but I know one thing — our friendship will always stay. ❤️✨
-    </p>
+    <div class="letter-body">
+      <p>
+        Bhai, honestly I don't know where to start — because some people
+        just become a part of your life so naturally that you forget
+        what it even felt like before they were there. 🌟
+        That's exactly what you are to me.
+      </p>
 
-    <p>
-        On your birthday, I just want to say:
-        Stay happy, keep smiling, and never change. 💕
-        The world is better because you are in it. 🌟❤️
-    </p>
+      <p>
+        You're not just a friend — you're literally the brother I got
+        from a completely different mother. 😂❤️
+        Same energy, same stupid jokes, same vibes —
+        I genuinely don't know how that happened, but I'm glad it did.
+      </p>
 
-    <p>
-        Thank you for being my best friend. 💕🤗❤️
-    </p>
+      <p>
+        You've been there through the good days and the chaotic ones. 💪
+        You never judged me, always kept it real,
+        and somehow always knew exactly what to say
+        (even when it was just "bhai chill kar"). 😄
+      </p>
 
-    <h3>Happy Birthday Sweety 🎂</h3>
+      <p>
+        Our friendship isn't the fancy kind with big speeches —
+        it's the kind where one message is enough, 📱
+        where silence is comfortable,
+        and where I know without a doubt
+        that you've always got my back. 🔥✨
+      </p>
 
-    <button class="next-btn" onclick="nextPage()">See Memories</button>
+      <p>
+        On your birthday, I just want you to know:
+        you're one of the rare ones, Harsh. 💛
+        The kind of person who makes everything
+        a little more fun and a lot less boring.
+        Never change, bhai. The world needs more of you. 🌍❤️
+      </p>
+
+      <p>
+        Here's to you, here's to us, and here's to a hundred more
+        years of nonsense and memories together. 🥂🎉
+      </p>
+    </div>
+
+    <div class="letter-sign">With all the love and zero chill —</div>
+    <div class="letter-closing">Happy Birthday Bhai 🎂🎉</div>
+    <div class="seal">💛</div>
+  </div>
+
+  <button class="next-btn" onclick="nextPage()">See Memories 📸</button>
 </div>
 
 <audio id="bgMusic" autoplay loop muted>
-    <source src="audio.mp3" type="audio/mpeg">
+  <source src="audio.mp3" type="audio/mpeg">
 </audio>
 <button id="musicToggle" class="music-btn" onclick="toggleAudio()">🔇 Unmute Music</button>
 
-<script src="navigate.js"></script>
 <script>
-function nextPage() {
-    window.location.href = "memories.html";
-}
-</script>
+  /* ── FLOATING HEARTS ── */
+  var heartEmojis = ['💛','✨','🎂','❤️','💕','🌟','🔥','💌'];
+  var heartsContainer = document.getElementById('hearts');
+  for (var h = 0; h < 18; h++) {
+    var hEl = document.createElement('div');
+    hEl.className = 'heart';
+    hEl.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+    hEl.style.cssText =
+      'left:' + (Math.random()*100) + '%;' +
+      'animation-duration:' + (7 + Math.random()*10) + 's;' +
+      'animation-delay:' + (Math.random()*10) + 's;' +
+      'font-size:' + (0.9 + Math.random()*1.1) + 'rem;';
+    heartsContainer.appendChild(hEl);
+  }
 
+  /* ── AUDIO (navigate.js compatible) ── */
+  function initializeAudioState() {
+    var audio  = document.getElementById('bgMusic');
+    var button = document.getElementById('musicToggle');
+    if (!audio || !button) return;
+
+    var isAudioMuted = localStorage.getItem('audioMuted');
+    var savedTime    = parseFloat(localStorage.getItem('audioTime')) || 0;
+
+    try { audio.currentTime = savedTime; } catch(e) {}
+
+    if (isAudioMuted === 'false') {
+      audio.muted = false;
+      audio.play().catch(function(){});
+      button.textContent = '🔊 Mute Music';
+    } else {
+      audio.muted = true;
+      button.textContent = '🔇 Unmute Music';
+    }
+
+    setInterval(function() {
+      if (!audio.paused && !audio.muted) localStorage.setItem('audioTime', audio.currentTime);
+    }, 1000);
+
+    window.addEventListener('beforeunload', function() {
+      if (audio) {
+        localStorage.setItem('audioTime', audio.currentTime);
+        localStorage.setItem('audioMuted', audio.muted);
+      }
+    });
+  }
+
+  function toggleAudio() {
+    var audio  = document.getElementById('bgMusic');
+    var button = document.getElementById('musicToggle');
+    if (audio.muted) {
+      audio.muted = false;
+      audio.play().catch(function(){});
+      button.textContent = '🔊 Mute Music';
+      localStorage.setItem('audioMuted', 'false');
+    } else {
+      audio.muted = true;
+      audio.pause();
+      button.textContent = '🔇 Unmute Music';
+      localStorage.setItem('audioMuted', 'true');
+    }
+    localStorage.setItem('audioTime', audio.currentTime);
+  }
+
+  function nextPage() {
+    var audio = document.getElementById('bgMusic');
+    if (audio) {
+      localStorage.setItem('audioTime', audio.currentTime);
+      localStorage.setItem('audioMuted', audio.muted);
+    }
+    window.location.href = 'memories.html';
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeAudioState);
+</script>
 </body>
 </html>
